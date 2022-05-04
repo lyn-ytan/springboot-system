@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    <!-- mapper对应的映射文件 -->
+    <!-- namespace与当前映射文件对应的mapper接口 -->
+<mapper namespace="com.ty.mapper.LoginUserMapper">
+
+<!--select 查询操作，id定义对应接口中的方法名
+parameterType方法参数类型  resultType方法返回值类型 -->
+   <select id="findUser" parameterType="java.lang.String"
+   resultType="com.ty.bean.LoginUser">
+   select * from loginuser 
+   where accountId=#{accountId} 
+   </select>
+</mapper>

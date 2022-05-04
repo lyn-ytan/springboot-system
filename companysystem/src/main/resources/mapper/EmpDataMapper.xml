@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    <!-- mapper对应的映射文件 -->
+    <!-- namespace与当前映射文件对应的mapper接口 -->
+<mapper namespace="com.ty.mapper.EmpDataMapper">
+
+	<!-- //查询所有 -->
+   <select id="findAll" 
+   resultType="com.ty.bean.EmpData">
+   select e.empCd,e.name,e.birthday,n.nationalityCd,n.nationalityName,g.genderCd,g.genderName
+		from empdata as e
+		left join nationality as n ON (e.nationalityCd=n.nationalityCd)
+		left join gender as g ON (e.genderCd=g.genderCd)
+   </select>
+   
+   <!-- 根据empCd更新信息 -->
+   <update id="updateByempCd" parameterType="com.ty.bean.EmpData">
+   update  empdata set name=#{name},birthday=#{birthday},
+   nationalityCd=#{nationalityCd},genderCd=#{genderCd}
+   where empCd=#{empCd}
+   </update>
+   
+   <!-- 根据empCd删除信息 -->
+   <delete id="deleteByEmpCd" parameterType="java.lang.String">
+   delete from empdata where empCd=#{empCd}
+   </delete>
+   
+   <!-- 添加信息 -->
+   <insert id="addEmpData" parameterType="com.ty.bean.EmpData">
+   insert into empdata (empCd,name,birthday,nationalityCd,genderCd)  
+   values(#{empCd},#{name},#{birthday},#{nationalityCd},#{genderCd})
+   </insert>
+   
+   <!-- 根据name查询信息 -->
+   <select id="selectByName" parameterType="java.lang.String"
+   resultType="com.ty.bean.EmpData">
+  select e.empCd,e.name,e.birthday,n.nationalityCd,n.nationalityName,g.genderCd,g.genderName
+		from empdata as e
+		left join nationality as n ON (e.nationalityCd=n.nationalityCd)
+		left join gender as g ON (e.genderCd=g.genderCd)
+   where name=#{name}
+   </select>
+   
+   <!-- 根据empCd查询信息 -->
+   <select id="selectByEmpCd" parameterType="java.lang.String"
+   resultType="com.ty.bean.EmpData">
+   select e.empCd,e.name,e.birthday,n.nationalityCd,n.nationalityName,g.genderCd,g.genderName
+		from empdata as e
+		left join nationality as n ON (e.nationalityCd=n.nationalityCd)
+		left join gender as g ON (e.genderCd=g.genderCd)
+    where empCd=#{empCd}
+   </select>
+   
+   <!-- 根据关键字查询 -->
+   <select id="searchEmp" parameterType="java.lang.String"
+   resultType="com.ty.bean.EmpData">
+   select e.empCd,e.name,e.birthday,n.nationalityCd,n.nationalityName,g.genderCd,g.genderName
+		from empdata as e
+		left join nationality as n ON (e.nationalityCd=n.nationalityCd)
+		left join gender as g ON (e.genderCd=g.genderCd)
+		where concat(empCd,name,birthday,nationalityName,genderName)
+        like #{keyword}
+   </select>
+   
+   
+   <select id="findnationalityName">
+   select * from nationality as n where nationalityCd=#{nationalityCd}
+   </select>
+   
+   <select id="findgenderName">
+   select * from gender as g where genderCd=#{genderCd}
+   </select>
+</mapper>
