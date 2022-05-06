@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="bootstrap-4.5.2-dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.18/datatables.min.css" />
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.18/datatables.min.js"></script>
+
+    <script>
+        jQuery(function ($) {
+            $("#myTable").DataTable();
+        });
+    </script>
+
+</head>
+
+<body id="page-top">
+    <div style="padding:200px;">
+        <table id="myTable" class="display">
+            <thead>
+                <tr>
+                    <th width="100">社員番号</th>
+                    <th width="100">名前</th>
+                    <th width="100">生年月日</th>
+                    <th width="100">国籍</th>
+                    <th width="100">性別</th>
+                    <th width="100" id="option">操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>100012</td>
+                    <td><a href="empDetails.html">上田太郎</a></td>
+                    <td>1993-09-06</td>
+                    <td>中国</td>
+                    <td>女性</td>
+                    <td>
+                        <div style="display:inline-flex">
+                            <form action="empChange.html" method="post">
+                                <input type="submit" value="変更" class="btn btn-primary" /> <input type="hidden"
+                                    name="empCd" value="100012">
+                            </form>&nbsp;&nbsp;
+                            <form action="#" method="post">
+                                <input type="submit" value="削除" class="btn btn-primary" onClick="delete_confirm()" />
+                                <input type="hidden" name="empCd" value="100012">
+                            </form>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>100012</td>
+                    <td><a href="empDetails.html">上田太郎</a></td>
+                    <td>1993-09-06</td>
+                    <td>中国</td>
+                    <td>女性</td>
+                    <td>
+                        <div style="display:inline-flex">
+                            <form action="empChange.html" method="post">
+                                <input type="submit" value="変更" class="btn btn-primary" /> <input type="hidden"
+                                    name="empCd" value="100012">
+                            </form>&nbsp;&nbsp;
+                            <form action="#" method="post">
+                                <input type="submit" value="削除" class="btn btn-primary" onClick="delete_confirm()" />
+                                <input type="hidden" name="empCd" value="100012">
+                            </form>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>100012</td>
+                    <td><a href="empDetails.html">上田太郎</a></td>
+                    <td>1993-09-06</td>
+                    <td>中国</td>
+                    <td>女性</td>
+                    <td>
+                        <div style="display:inline-flex">
+                            <form action="empChange.html" method="post">
+                                <input type="submit" value="変更" class="btn btn-primary" /> <input type="hidden"
+                                    name="empCd" value="100012">
+                            </form>&nbsp;&nbsp;
+                            <form action="#" method="post">
+                                <input type="submit" value="削除" class="btn btn-primary" onClick="delete_confirm()" />
+                                <input type="hidden" name="empCd" value="100012">
+                            </form>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <a class="scroll-to-top rounded" style="display: inline;" href="#page-top"> <i class="fas fa-angle-up"></i>
+    </a>
+</body>
+
+</html>

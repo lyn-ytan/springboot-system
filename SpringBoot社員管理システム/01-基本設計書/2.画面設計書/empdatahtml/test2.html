@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.18/datatables.min.css" />
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.18/datatables.min.js"></script>
+
+
+
+    <script>
+        jQuery(function ($) {
+            $("#myTable").DataTable();
+        });
+    </script>
+
+</head>
+
+<body id="page-top">
+    <div style="padding:100px;">
+        <table id="myTable" class="display">
+            <thead>
+                <tr>
+                    <th width="100">社員番号</th>
+                    <th width="100">名前</th>
+                    <th width="100">生年月日</th>
+                    <th width="100">国籍</th>
+                    <th width="100">性別</th>
+                    <th colspan="2" width="100" id="option">操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>100012</td>
+                    <td><a href="empDetails.html">上田太郎</a></td>
+                    <td>1993-09-06</td>
+                    <td>中国</td>
+                    <td>女性</td>
+                    <td>
+
+                        <form action="empChange.html" method="post">
+                            <input type="submit" value="変更" class="btn btn-primary" /> <input type="hidden" name="empCd"
+                                value="100012">
+                        </form>
+                        <form action="#" method="post" onClick="return delete_confirm()">
+                            <input type="submit" value="削除" class="btn btn-primary" /> <input type="hidden" name="empCd"
+                                value="100012">
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td>100014</td>
+                    <td><a href="empDetails.html">高橋アリア</a></td>
+                    <td>1992-09-09</td>
+                    <td>日本</td>
+                    <td>女性</td>
+                    <td>
+                        <form action="empChange.html" method="post">
+                            <input type="submit" value="変更" class="btn btn-primary" /> <input type="hidden" name="empCd"
+                                value="100014">
+                        </form>
+                        <form action="#" method="post" onClick="return delete_confirm()">
+                            <input type="submit" value="削除" class="btn btn-primary" /> <input type="hidden" name="empCd"
+                                value="100014">
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td>100018</td>
+                    <td><a href="empDetails.html">坂本剣</a></td>
+                    <td>1991-09-04</td>
+                    <td>アメリカ</td>
+                    <td>女性</td>
+                    <td>
+                        <form action="empChange.html" method="post">
+                            <input type="submit" value="変更" class="btn btn-primary" /> <input type="hidden" name="empCd"
+                                value="100018">
+                        </form>
+                        <form action="#" method="post" onClick="return delete_confirm()">
+                            <input type="submit" value="削除" class="btn btn-primary" /> <input type="hidden" name="empCd"
+                                value="100018">
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td>100019</td>
+                    <td><a href="empDetails.html">坂本健一</a></td>
+                    <td>1990-09-09</td>
+                    <td>日本</td>
+                    <td>女性</td>
+                    <td>
+                        <form action="empChange.html" method="post">
+                            <input type="submit" value="変更" class="btn btn-primary" /> <input type="hidden" name="empCd"
+                                value="100019">
+                        </form>
+                        <form action="#" method="post" onClick="return delete_confirm()">
+                            <input type="submit" value="削除" class="btn btn-primary" /> <input type="hidden" name="empCd"
+                                value="100019">
+                        </form>
+                    </td>
+                </tr>
+            <tbody>
+        </table>
+    </div>
+
+    <a class="scroll-to-top rounded" style="display: inline;" href="#page-top"> <i class="fas fa-angle-up"></i>
+    </a>
+</body>
+
+</html>

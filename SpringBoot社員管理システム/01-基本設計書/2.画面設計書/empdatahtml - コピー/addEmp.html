@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<title>社員管理システム</title>
+</head>
+<body>
+	<div class="header">
+		<img src="images/logo1.jpg" width="5%" />&nbsp;&nbsp;&nbsp;社員管理システム
+	</div>
+        <hr/>
+    <br/>
+        <h1 align="center">社員情報登録</h1>
+	<div id="div1">
+		<form action="empLogin.html"><button type="submit" class="btn btn-warning">ログアウト</button></form>				
+	</div>
+	<div align="center">
+		<form method="post" action="empList.html">
+			<!-- 入力テーブル -->
+			<table class="addTable">
+				<tr>
+					<td>社員番号</td>
+					<td><input type="text" class="form-control" id="empCd" name="empCd" value="" /></td>
+					<td>(※必須)</td>
+				</tr>
+				<tr>
+					<td>名前</td>
+					<td><input type="text" class="form-control" id="name" name="name" value="" /></td>
+					<td>(※必須)</td>
+				</tr>
+				<tr>
+					<td>性別</td>
+					<td><select id="genderCd" name="genderCd" class="form-control">
+							<option value=""></option>
+							<option value="01">女性</option>
+							<option value="02">男性</option>
+							<option value="03">不明</option>
+					</select></td>
+					<td>(※必須)</td>
+				</tr>
+				<tr>
+					<td>生年月日</td>
+					<td><input type="date" class="form-control" id="birthday" name="birthday" value=""></td>
+					<td>(※必須)</td>
+				</tr>
+				<tr>
+					<td>国籍</td>
+					<td><select id="NationalityCd" name="NationalityCd" class="form-control">
+							<option value=""></option>
+							<option value="001">中国</option>
+							<option value="002">日本</option>
+							<option value="003">アメリカ</option>
+							<option value="004">カナダ</option>
+							<option value="005">イギリス</option>
+					</select></td>
+					<td>(※必須)</td>
+				</tr>
+			</table>
+			<br>
+			<div align="center">
+				<input type="submit" value="確定" class="btn btn-primary" />&nbsp; <input type="submit" value="戻る"
+					class="btn btn-primary" /></a>
+			</div>
+		</form>
+	</div>
+	<div id="aligncenter" style="color: red">
+		<p></p>
+	</div>
+	<div id="aligncenter">
+		
+	</div>
+</body>
+<br/><br/><br/>
+<div class="copyright">©码农吧 https://www.coderbar.com/</div>
+</html>

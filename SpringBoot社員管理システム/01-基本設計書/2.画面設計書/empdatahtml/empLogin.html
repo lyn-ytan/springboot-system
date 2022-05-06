@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<title>社員管理システム</title>
+</head>
+<body>
+	<div class="header">
+		<img src="images/logo1.jpg" width="5%" />&nbsp;&nbsp;&nbsp;社員管理システム
+	</div>
+    <hr/>
+    <br/>
+    <h1 align="center">ログイン</h1>
+    <div id="typein" align="center" type="padding-bottom: 60px;height:480px">
+        <form method="post" action="empList.html">
+        <br/>
+            <table>
+                <tr>
+                    <td><p class="text-primary" style="font-size:25px">ユーザーID</p><input type="text" class="form-control" name="accountId" value="" size="40" placeholder="Emailアドレスを入力してください" onkeydown="eraseInfo();" id="accountId" />
+                    </td>
+                </tr>
+                <tr><td></td></tr>
+
+                <tr>
+                    <td><p class="text-primary" style="font-size:25px">パスワード</p><input type="password" class="form-control" name="password" value="" size="40" maxlength="6" onkeydown="eraseInfo();" id="password" />
+                    </td>
+                </tr>
+            </table>
+            <br/>
+            <input type="submit" value="ログイン" class="btn btn-primary"/><br />
+            <div id="show" style="color: red">
+                <p></p>
+            </div>
+        </form>
+    </div>
+</body>
+<br/><br/><br/>
+<div class="copyright">©码农吧 https://www.coderbar.com/</div>
+
+</html>

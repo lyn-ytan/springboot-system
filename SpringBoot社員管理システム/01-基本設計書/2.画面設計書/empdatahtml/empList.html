@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.18/datatables.min.css" />
+	<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.18/datatables.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	<script>
+		jQuery(function ($) {
+			$("#myTable").DataTable();
+		});
+	</script>
+
+	<title>社員管理システム</title>
+</head>
+
+<body>
+	<div class="header">
+		<img src="images/logo1.jpg" width="5%" />&nbsp;&nbsp;&nbsp;社員管理システム
+	</div>
+	<hr />
+	<br />
+	<h1 align="center">社員情報一覧</h1>
+	<div align="center" class="listForm">
+		<span></span>
+		<div align="right">
+			<div id="01" style="width: 20px; height: 20px; float: left; margin-left: 70%">
+
+				<form action="addEmp.html">
+					<input type="submit" class="btn btn-success" value="社員登録" />
+				</form>
+			</div>
+			<div id="02" style="width: 20px; height: 20px; float: left; margin-left: 100px;">
+				<form action="empLogin.html"><button type="submit" class="btn btn-warning">ログアウト</button></form>
+			</div>
+		</div>
+		<br /><br />
+		<div align="right" style=" height: 20px; float: left; margin-left: 41%">
+			<form action="#" method="post">
+				<div class="form-group row col-md-8" style="margin: 2% 56%">
+					<div class="col-sm-10 col-form-label">
+						<input type="text" name="keyWord" class="form-control" onkeydown="eraseInfo();" />
+					</div>
+					<div class="col-sm-1 col-form-label">
+						<input type="submit" value="社員検索" class="btn btn-light" />
+					</div>
+				</div>
+			</form>
+		</div>
+
+		<div align="center" style="margin-top: 50px">
+
+			<table class="display" id="myTable">
+				<thead>
+					<tr>
+						<th width="100">社員番号</th>
+						<th width="100">名前</th>
+						<th width="100">生年月日</th>
+						<th width="100">国籍</th>
+						<th width="100">性別</th>
+						<th colspan="2" width="100" id="option">操作</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>100012</td>
+						<td><a href="empDetails.html">上田太郎</a></td>
+						<td>1993-09-06</td>
+						<td>中国</td>
+						<td>女性</td>
+						<td>
+
+							<form action="empChange.html" method="post">
+								<input type="submit" value="変更" class="btn btn-primary" /> <input type="hidden"
+									name="empCd" value="100012">
+							</form>
+							<form action="#" method="post">
+								<input type="submit" value="削除" class="btn btn-primary" onclick="delete_confirm()" />
+								<input type="hidden" name="empCd" value="100012">
+							</form>
+
+
+						</td>
+					</tr>
+					<tr>
+						<td>100014</td>
+						<td><a href="empDetails.html">高橋アリア</a></td>
+						<td>1992-09-09</td>
+						<td>日本</td>
+						<td>女性</td>
+						<td>
+							<form action="empChange.html" method="post">
+								<input type="submit" value="変更" class="btn btn-primary" /> <input type="hidden"
+									name="empCd" value="100014">
+							</form>
+							<form action="#" method="post" onClick="return delete_confirm()">
+								<input type="submit" value="削除" class="btn btn-primary" /> <input type="hidden"
+									name="empCd" value="100014">
+							</form>
+						</td>
+					</tr>
+					<tr>
+						<td>100018</td>
+						<td><a href="empDetails.html">坂本剣</a></td>
+						<td>1991-09-04</td>
+						<td>アメリカ</td>
+						<td>女性</td>
+						<td>
+
+							<form action="empChange.html" method="post">
+								<input type="submit" value="変更" class="btn btn-primary" /> <input type="hidden"
+									name="empCd" value="100018">
+							</form>
+							<form action="#" method="post" onClick="return delete_confirm()">
+								<input type="submit" value="削除" class="btn btn-primary" /> <input type="hidden"
+									name="empCd" value="100018">
+							</form>
+
+
+						</td>
+					</tr>
+					<tr>
+						<td>100019</td>
+						<td><a href="empDetails.html">坂本健一</a></td>
+						<td>1990-09-09</td>
+						<td>日本</td>
+						<td>女性</td>
+						<td>
+
+							<form action="empChange.html" method="post">
+								<input type="submit" value="変更" class="btn btn-primary" /> <input type="hidden"
+									name="empCd" value="100019">
+							</form>
+							<form action="#" method="post" onClick="return delete_confirm()">
+								<input type="submit" value="削除" class="btn btn-primary" /> <input type="hidden"
+									name="empCd" value="100019">
+							</form>
+
+
+						</td>
+					</tr>
+					<tr>
+						<td>100020</td>
+						<td><a href="empDetails.html">山本孝之</a></td>
+						<td>1990-03-09</td>
+						<td>アメリカ</td>
+						<td>女性</td>
+						<td>
+
+							<form action="empChange.html" method="post">
+								<input type="submit" value="変更" class="btn btn-primary" /> <input type="hidden"
+									name="empCd" value="100020">
+							</form>
+							<form action="#" method="post" onClick="return delete_confirm()">
+								<input type="submit" value="削除" class="btn btn-primary" /> <input type="hidden"
+									name="empCd" value="100020">
+							</form>
+
+
+						</td>
+					</tr>
+					<tr>
+						<td>100023</td>
+						<td><a href="empDetails.html">山田健一</a></td>
+						<td>1990-07-04</td>
+						<td>日本</td>
+						<td>女性</td>
+						<td>
+
+							<form action="empChange.html" method="post">
+								<input type="submit" value="変更" class="btn btn-primary" /> <input type="hidden"
+									name="empCd" value="100023">
+							</form>
+							<form action="#" method="post" onClick="return delete_confirm()">
+								<input type="submit" value="削除" class="btn btn-primary" /> <input type="hidden"
+									name="empCd" value="100023">
+							</form>
+
+
+						</td>
+					</tr>
+					<tr>
+						<td>100026</td>
+						<td><a href="empDetails.html">山田健一</a></td>
+						<td>1990-07-04</td>
+						<td>日本</td>
+						<td>女性</td>
+						<td>
+
+							<form action="empChange.html" method="post">
+								<input type="submit" value="変更" class="btn btn-primary" /> <input type="hidden"
+									name="empCd" value="100026">
+							</form>
+							<form action="#" method="post" onClick="return delete_confirm()">
+								<input type="submit" value="削除" class="btn btn-primary" /> <input type="hidden"
+									name="empCd" value="100026">
+							</form>
+
+
+						</td>
+					</tr>
+					<tr>
+						<td>100011</td>
+						<td><a href="empDetails.html">山田もも</a></td>
+						<td>1990-09-09</td>
+						<td>中国</td>
+						<td>男性</td>
+						<td>
+
+							<form action="empChange.html" method="post">
+								<input type="submit" value="変更" class="btn btn-primary" /> <input type="hidden"
+									name="empCd" value="100011">
+							</form>
+							<form action="#" method="post" onClick="return delete_confirm()">
+								<input type="submit" value="削除" class="btn btn-primary" /> <input type="hidden"
+									name="empCd" value="100011">
+							</form>
+
+
+						</td>
+					</tr>
+					<tr>
+						<td>100013</td>
+						<td><a href="empDetails.html">高橋梨</a></td>
+						<td>1990-05-09</td>
+						<td>日本</td>
+						<td>男性</td>
+						<td>
+
+							<form action="empChange.html" method="post">
+								<input type="submit" value="変更" class="btn btn-primary" /> <input type="hidden"
+									name="empCd" value="100013">
+							</form>
+							<form action="#" method="post" onClick="return delete_confirm()">
+								<input type="submit" value="削除" class="btn btn-primary" /> <input type="hidden"
+									name="empCd" value="100013">
+							</form>
+
+
+						</td>
+					</tr>
+					<tr>
+						<td>100015</td>
+						<td><a href="empDetails.html">山田ユリ</a></td>
+						<td>1990-04-09</td>
+						<td>中国</td>
+						<td>男性</td>
+						<td>
+
+							<form action="empChange.html" method="post">
+								<input type="submit" value="変更" class="btn btn-primary" /> <input type="hidden"
+									name="empCd" value="100015">
+							</form>
+							<form action="#" method="post" onClick="return delete_confirm()">
+								<input type="submit" value="削除" class="btn btn-primary" /> <input type="hidden"
+									name="empCd" value="100015">
+							</form>
+
+
+						</td>
+					</tr>
+					<tr>
+						<td>100016</td>
+						<td><a href="empDetails.html">五反田二</a></td>
+						<td>1992-09-11</td>
+						<td>カナダ</td>
+						<td>男性</td>
+						<td>
+							<form action="empChange.html" method="post">
+								<input type="submit" value="変更" class="btn btn-primary" /> <input type="hidden"
+									name="empCd" value="100016">
+							</form>
+							<form action="#" method="post" onClick="return delete_confirm()">
+								<input type="submit" value="削除" class="btn btn-primary" /> <input type="hidden"
+									name="empCd" value="100016">
+							</form>
+
+						</td>
+					</tr>
+				<tbody>
+			</table>
+
+		</div>
+
+		<script type="text/javascript">
+			//削除確認メセージ
+			function delete_confirm() {
+				if (window.confirm('該当社員情報を削除します。よろしいですか？')) {
+					//alert("確認");
+					return true;
+				} else {
+					//alert("キャンセル");
+					return false;
+				}
+			}
+		</script>
+
+</body>
+<br /><br /><br />
+<div class="copyright">©码农吧 https://www.coderbar.com/</div>
+
+</html>
